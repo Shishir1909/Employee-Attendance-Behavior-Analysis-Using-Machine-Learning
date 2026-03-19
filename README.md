@@ -15,8 +15,6 @@ This solution processes attendance data, engineers features, trains an anomaly m
 - `src/pipeline.py`: schema validation, cleaning, and feature engineering.
 - `src/modeling.py`: global model, employee-level pattern detection, hybrid decision, and ground-truth evaluation.
 - `src/data_generator.py`: synthetic attendance dataset generator.
-- `tests/`: automated tests for preprocessing and modeling output contract.
-- `slides/presentation_outline.md`: 7-slide deck content structure.
 
 ## Required Dataset Schema
 CSV input must include:
@@ -25,8 +23,6 @@ CSV input must include:
 - `logout_time` (`HH:MM`)
 - `date` (`YYYY-MM-DD`)
 - `department`
-
-Optional columns (recommended for synthetic-data evaluation):
 - `ground_truth_anomaly` (`0/1`)
 - `ground_truth_type` (`normal`, `early_logout`, `late_login`, `short_duration`)
 
@@ -82,11 +78,6 @@ python src/data_generator.py --output data/sample_attendance.csv
 python -m streamlit run app.py
 ```
 
-### 4) Run tests
-```powershell
-python -m pytest -q
-```
-
 ## Streamlit Sections Implemented
 - Dataset Upload
 - Data Preview
@@ -95,17 +86,3 @@ python -m pytest -q
 - Results Visualization (global vs employee vs hybrid)
 - Ground Truth Evaluation (when labels are available)
 - Export to `output/`
-
-## Example Outputs
-- Work duration distribution split by hybrid anomaly flag.
-- Hybrid anomaly count by employee.
-- Top employees by abnormal login/logout pattern frequency.
-- Date-wise trend for global, employee, and hybrid signals.
-- Ranked anomaly table with reason and severity.
-- Precision/recall/F1 and confusion matrix (synthetic ground truth).
-
-## Submission Checklist
-- GitHub repository with source code.
-- README explaining approach and run instructions.
-- 5-7 slide presentation (`slides/presentation_outline.md` can be converted to PPT/PDF).
-- Optional short demo video.
