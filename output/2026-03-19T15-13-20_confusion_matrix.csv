@@ -1,0 +1,9 @@
+method,actual,predicted,count
+global,anomaly,anomaly,179
+global,normal,anomaly,31
+global,normal,normal,2327
+global,anomaly,normal,79
+hybrid,anomaly,anomaly,243
+hybrid,normal,anomaly,567
+hybrid,normal,normal,1791
+hybrid,anomaly,normal,15
